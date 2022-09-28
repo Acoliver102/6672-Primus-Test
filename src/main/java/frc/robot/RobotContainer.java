@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveJoystick;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.PIDPosition;
 import frc.robot.commands.Test;
 import frc.robot.subsystems.Chassis;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -45,7 +46,7 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(m_controller, XboxController.Button.kA.value).whileHeld(new Test(m_chassis));
+    new JoystickButton(m_controller, XboxController.Button.kA.value).whileHeld(new PIDPosition(m_chassis));
   }
 
   /**
